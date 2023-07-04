@@ -11,6 +11,7 @@ const LandingSection = () => {
   const landingChildLeftRef = useRef(null);
   const landingChildMiddleRef = useRef(null);
   const landingChildRightRef = useRef(null);
+  const block3ContentContainerRef = useRef(null)
 
   useEffect(() => {
     var tl = gsap.timeline();
@@ -55,18 +56,13 @@ const LandingSection = () => {
         duration: 1,
         delay: -0.7,
         ease: Expo.easeInOut,
+      })
+      .to(block3ContentContainerRef.current, {
+        y: 0,
+        display: 'block',
+        duration: 1,
+        ease: Expo.easeInOut,
       });
-  }, []);
-
-  useEffect(() => {
-    var tl = gsap.timeline();
-
-    tl.to(landingChildRef.current, {
-      y: "-100%",
-      duration: 2,
-      delay: 2,
-      ease: Expo.easeInOut,
-    });
   }, []);
 
   return (
@@ -89,7 +85,16 @@ const LandingSection = () => {
         </h1>
       </div>
       <div id="block2" ref={block2ref} />
-      <div id="block3" ref={block3ref}></div>
+      <div id="block3" ref={block3ref}>
+        <div id="block3ContentContainer" ref={block3ContentContainerRef}>
+          <div className="block3Content moveRight">IM A</div>
+          <div className="block3Content moveLeft changingText">Sample</div>
+          <div className="block3Content">FINAL YEAR</div>
+          <div className="block3Content">SOFTWARE</div>
+          <div className="block3Content moveLeft">ENGINEERING</div>
+          <div className="block3Content">STUDENT</div>
+        </div>
+      </div>
     </div>
   );
 };

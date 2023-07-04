@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import LandingSection from './components/LandingSection';
+import TestSection from './components/TestSection';
 
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
 
     <div className="App">
       <LandingSection/>
+      <TestSection/>
     </div>
 
   );

@@ -1,8 +1,11 @@
-@import url('./Fonts/css/switzer.css');
+@import url('./assets/Fonts/css/switzer.css');
 
 :root {
-  --darkColor: #101010;
+  --darkColor: #303030;
   --lightColor: #e7e2df;
+  /* --popAccent: #FF8357; */
+  --popAccent: #FF7f50;
+
 }
 
 

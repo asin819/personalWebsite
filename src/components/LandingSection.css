@@ -20,7 +20,7 @@
     width: 100%;
     position: absolute;
     bottom: 0;
-    background-color: green;
+    background-color: var(--popAccent);
 }
 
 #block3{
@@ -50,11 +50,19 @@
     line-height: calc(100vw/15)
 }
 .moveLeft{
-    margin-left: calc(50vw/2);
+    margin-left: calc(50vw/3);
 }
 
 .moveRight{
     margin-left: calc(90vw/2);
+}
+
+.changingText{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    background-color: #303030;
+    color: var(--lightColor);
 }
 
 @media only screen and (max-width: 500px) {
@@ -72,16 +80,20 @@
     .moveRight{
         margin-left: calc(90vw/2);
     }
+    .changingText{
+        font-size: calc(100vw/12);
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        background-color: #303030;
+        color: var(--lightColor);
+    }
 }
 
-
-.changingText{
-    width: fit-content;
-    height: fit-content;
-    padding: 10px;
-    background-color: #303030;
-    color: var(--lightColor);
+.customColor{
+    color: var(--popAccent)
 }
+
 
 #landingParent{
     display: block;

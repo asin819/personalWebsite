@@ -13,6 +13,8 @@ const LandingSection = () => {
   const landingChildRightRef = useRef(null);
   const block3ContentContainerRef = useRef(null)
 
+  var counter = 0;
+
   useEffect(() => {
     var tl = gsap.timeline();
 
@@ -63,7 +65,33 @@ const LandingSection = () => {
         duration: 1,
         ease: Expo.easeInOut,
       });
+
+      const changingTextElements = block3ContentContainerRef.current.querySelectorAll(
+        ".changingText"
+      );
+  
+      gsap.set(changingTextElements, { transformOrigin: "center center" });
+  
+      const flippingTimeline = gsap.timeline({ repeat: -2, yoyo: true });
+      flippingTimeline
+        .to(changingTextElements, {
+          rotationX: -90,
+          duration: 0.75,
+          delay: 0.5,
+          ease: Expo.easeInOut,
+        })
+        .call(() => {
+          changingTextElements.forEach((element) => {
+            element.textContent = getRandomText(); // Change the text content to a new random value
+          });
+        })
   }, []);
+
+  const getRandomText = () => {
+    const texts = ["Passionate", "Creative", "Caffeine Addict ☕"]; // Add your desired texts here
+    counter = counter + 1;
+    return texts[counter%3];
+  };
 
   return (
     <div id="LandingSection">
@@ -88,10 +116,10 @@ const LandingSection = () => {
       <div id="block3" ref={block3ref}>
         <div id="block3ContentContainer" ref={block3ContentContainerRef}>
           <div className="block3Content moveRight">IM A</div>
-          <div className="block3Content moveLeft changingText">Sample</div>
+          <div className="block3Content moveLeft changingText"></div>
           <div className="block3Content">FINAL YEAR</div>
-          <div className="block3Content">SOFTWARE</div>
-          <div className="block3Content moveLeft">ENGINEERING</div>
+          <div className="block3Content customColor">SOFTWARE</div>
+          <div className="block3Content moveLeft ">ENGINEERING</div>
           <div className="block3Content">STUDENT</div>
         </div>
       </div>

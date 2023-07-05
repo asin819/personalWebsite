@@ -88,7 +88,7 @@ const LandingSection = () => {
   }, []);
 
   const getRandomText = () => {
-    const texts = ["Passionate", "Creative", "Caffeine Addict ☕"]; // Add your desired texts here
+    const texts = ["Passionate 😤", "Creative", "Caffeine Addict ☕"]; // Add your desired texts here
     counter = counter + 1;
     return texts[counter%3];
   };
@@ -118,7 +118,7 @@ const LandingSection = () => {
           <div className="block3Content moveRight">IM A</div>
           <div className="block3Content moveLeft changingText"></div>
           <div className="block3Content">FINAL YEAR</div>
-          <div className="block3Content customColor">SOFTWARE</div>
+          <div className="block3Content customColor customFont">SOFTWARE</div>
           <div className="block3Content moveLeft ">ENGINEERING</div>
           <div className="block3Content">STUDENT</div>
         </div>

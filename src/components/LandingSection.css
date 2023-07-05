@@ -94,6 +94,10 @@
     color: var(--popAccent)
 }
 
+.customFont{
+    font-family: MaziusItalic;
+    font-weight: bolder;
+}
 
 #landingParent{
     display: block;

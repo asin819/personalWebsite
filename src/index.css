@@ -14,11 +14,17 @@ body {
   font-family: 'Switzer-Bold';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--darkColor);
+  background-color: var(--lightColor);
   color: var(--lightColor);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: MaziusItalic;
+  src: url('./assets/Fonts/mazius/MAZIUSREVIEW2009-Italic.ttf') format("truetype"),
+      url('./assets/Fonts/mazius/MAZIUSREVIEW2009-Italic.woff') format("woff");
 }

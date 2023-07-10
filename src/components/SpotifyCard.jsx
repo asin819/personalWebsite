@@ -5,12 +5,12 @@ import './SpotifyCard.css'
 const SpotifyCard = () => {
   return (
     <div className="SpotifyContainer">
+        <div className="SpotifyText">Here's what I <span className="customFont customColor">listen</span> to 🎧</div>
     <Spotify
       className="SpotifyPlayer"
-      style={{ width: "500px" }}
-      link="https://open.spotify.com/playlist/37i9dQZF1F0sijgNaJdgit?si=bc35987cd23a4afa"
+      link="https://open.spotify.com/playlist/41VAFy2alm71P5kyFckLdW?si=19179be7676e4505"
     />
-    <div className="SpotifyText">Here's what I listen to 🎧</div>
+    
     </div>
   );
 };

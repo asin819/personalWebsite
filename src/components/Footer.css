@@ -17,9 +17,17 @@
   margin: 20px;
 }
 
-@media only screen and (max-width: 500px) {
-  .reactIcon {
+@media only screen and (max-width: 400px) {
+  .FooterContainer{
+    flex-direction: column;
+    height: auto;
+  }
+
+  .footerContent{
     font-size: 2rem;
-    margin: 10px;
+  }
+
+  .mobileFooter{
+    font-size: 1rem;
   }
 }

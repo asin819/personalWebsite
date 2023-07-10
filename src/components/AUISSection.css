@@ -1,0 +1,66 @@
+@import url("../index.css");
+
+.AUISContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.IGContainer {
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+}
+.AUISTextContainer {
+  width: 35vw;
+  color: var(--darkColor);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.AUISHeader {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.AUISContent {
+  font-size: 1.5rem;
+  font-family: "Switzer-Regular";
+}
+
+@media only screen and (max-width: 540px) {
+  .AUISContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .IGContainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .AUISTextContainer {
+    width: 80vw;
+    color: var(--darkColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .AUISHeader {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .AUISContent {
+    font-size: 1rem;
+    font-family: "Switzer-Regular";
+    text-align: center;
+  }
+}

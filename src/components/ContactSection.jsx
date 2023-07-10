@@ -66,7 +66,7 @@ const ContactSection = () => {
           name="from_name"
           sx={{
             width: "40vw",
-            minWidth: "350px",
+            minWidth: "320px",
             margin: "10px",
             boxShadow: "box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;",
           }}
@@ -76,7 +76,7 @@ const ContactSection = () => {
           name="email"
           sx={{
             width: "40vw",
-            minWidth: "350px",
+            minWidth: "320px",
             margin: "10px",
             boxShadow: "box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;",
           }}
@@ -86,7 +86,7 @@ const ContactSection = () => {
           name="message"
           sx={{
             width: "40vw",
-            minWidth: "350px",
+            minWidth: "320px",
             margin: "10px",
             boxShadow: "box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;",
           }}

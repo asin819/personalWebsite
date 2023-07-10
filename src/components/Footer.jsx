@@ -31,7 +31,7 @@ const Footer = () => {
         />
       </div>
       <div className="footerRight footerContent">
-        Made using <FaReact className="reactIcon" style={{ margin: "5px" }} />{" "}
+        <span className="mobileFooter">Made using</span><FaReact className="reactIcon" style={{ margin: "5px" }} />{" "}
         <BiLogoJavascript
           className="reactIcon"
           style={{ marginRight: "5px" }}

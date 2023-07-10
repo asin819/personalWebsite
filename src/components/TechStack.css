@@ -1,0 +1,38 @@
+@import url("../index.css");
+
+.TechStackContainer {
+  width: 100%;
+  background-color: var(--darkColor);
+  margin-bottom: 40px;
+  color: var(--lightColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.TechStackTitle {
+  font-size: 4rem;
+}
+
+.Technology {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 40px;
+}
+
+.TechnologyDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Switzer-Regular";
+  margin: 20px;
+}
+.TechnologyIcon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}

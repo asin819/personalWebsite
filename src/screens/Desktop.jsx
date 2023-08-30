@@ -23,10 +23,21 @@ const Desktop = () => {
     background-color: ${theme.background};
     color: ${theme.font};
     padding-bottom: 40px;
+    padding-top: 40px;
+    text-align: center;
   `;
+
+  const Filler = styled.div`
+  width: 100%;
+  background-color: ${theme.background};
+  height: 80px
+  `
+  
   return (
     <>
+  
       <LandingSection />
+      <Filler/>
       <ProjectContainer />
       <TechStack />
       <NonTechHeader>Some non-🤓 stuff</NonTechHeader>

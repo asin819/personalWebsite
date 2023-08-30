@@ -10,7 +10,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--darkColor);
+  background: #0c0c0c;
   /* -webkit-box-shadow: none; */
 }
 ::-webkit-scrollbar {

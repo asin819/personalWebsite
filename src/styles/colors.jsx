@@ -16,7 +16,7 @@ export const lightTheme = {
     backgroundSecondary: '#303030',
     backgroundAlt: '#f7f7f7',
     font: '#303030',
-    fontSeconary: '#e7e2df',
+    fontSecondary: '#e7e2df',
     fontHover: '#fefefe',
     primary: '#D8A7A3',
     primaryHover: 'black',

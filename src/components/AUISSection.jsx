@@ -59,10 +59,13 @@ const AUISSection = () => {
   const Header = styled.div`
     font-size: 4rem;
     margin-bottom: 20px;
-
+    text-align: center;
+    width: 100%;
     @media only screen and (max-width: 540px) {
       font-size: 1.8rem;
       margin-bottom: 20px;
+      margin-top: 20px;
+
     }
   `;
 
@@ -80,12 +83,12 @@ const AUISSection = () => {
     return (
       <TextContainer>
         <Header>
-          <CustomSpan>Extra </CustomSpan> - Curriculars
+          <span className="customColor customFont">Extra </span> - Curriculars
         </Header>
         <Content>
-          Elected as <CustomSpan> President </CustomSpan> for Auckland
+          Elected as <span className="customColor customFont"> President </span> for Auckland
           University Indian Society for 2023. Leading a team of 8 to execute fun
-          social and cultural events for over 300 members.
+          social and cultural events for over 450 members.
         </Content>
       </TextContainer>
     );

@@ -19,16 +19,28 @@ const TechStack = () => {
 
   const Header = styled.div`
     font-size: 4rem;
+    text-align: center;
   `;
 
   const TechContainer = styled.div`
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    grid-auto-flow: row;
-    grid-template-columns: repeat(5, 1fr);
-    margin-bottom: 40px;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media only screen and (min-width: 1400px) {
+    width: 50vw
+  }
   `;
+
+  const ChildItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 20%
+  `
 
   const TechItem = styled.div`
     display: flex;
@@ -57,10 +69,12 @@ const TechStack = () => {
       <TechContainer>
         {TechStackData.map((item) => {
           return (
+            <ChildItem>
             <TechItem>
               <TechIcon>{item.icon}</TechIcon>
               {item.name}
             </TechItem>
+            </ChildItem>
           );
         })}
       </TechContainer>

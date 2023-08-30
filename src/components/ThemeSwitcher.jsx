@@ -30,7 +30,7 @@ export const ThemeSwitcher = () => {
       },
     },
     "& .MuiSwitch-thumb": {
-      backgroundColor: isDark ? "#003892" : "#001e3c",
+      backgroundColor: isDark ? "#003892" : theme.accent,
       width: 32,
       height: 32,
       "&:before": {

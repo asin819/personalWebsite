@@ -16,6 +16,7 @@ const ProjectCard = (props) => {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    
   `;
 
   const ImageContainer = styled.div`

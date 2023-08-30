@@ -1,25 +1,25 @@
 import './App.css'
-import LandingSection from './components/LandingSection'
-import SpotifyCard from './components/SpotifyCard'
-import ContactSection from './components/ContactSection'
-import Footer from './components/Footer'
-import AUISSection from './components/AUISSection'
-import ProjectContainer from './components/ProjectContainer'
-import TechStack from './components/TechStack'
 
+
+import { useMediaQuery } from 'react-responsive'
+import Desktop from './screens/Desktop'
+import Mobile from './screens/Mobile'
+import { useContext } from 'react'
+import { ThemeContext } from './contexts/theme'
 
 function App() {
 
+  const MobileBreakPointWidth = '50em'
+  // const MobileBreakPointHeight = '46em'
+  const isMobile = useMediaQuery({maxWidth: MobileBreakPointWidth})
+  const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
+
 
   return (
+    
     <>
-    <LandingSection/>
-    <ProjectContainer/>
-    <TechStack/>
-    <AUISSection/>
-    <SpotifyCard/>
-    <ContactSection/>
-    <Footer/>
+    {/* {isMobile?  <Mobile/> :<Desktop/>} */}
+    <Desktop/>
     </>
   )
 }

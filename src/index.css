@@ -1,17 +1,36 @@
-@import url('./assets/Fonts/css/switzer.css');
+@import url("./assets/Fonts/css/switzer.css");
 
 :root {
   --darkColor: #303030;
   --lightColor: #e7e2df;
-  /* --popAccent: #FF8357; */
-  --popAccent: #FF7f50;
-
+  
+  --popAccent: #ff7f50;
+  overflow-x: hidden;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--darkColor);
+  /* -webkit-box-shadow: none; */
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--popAccent);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff9b76;
+}
 
 body {
   margin: 0;
-  font-family: 'Switzer-Bold';
+  font-family: "Switzer-Bold";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--lightColor);
@@ -19,12 +38,13 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 @font-face {
   font-family: MaziusItalic;
-  src: url('./assets/Fonts/mazius/MAZIUSREVIEW2009-Italic.ttf') format("truetype"),
-      url('./assets/Fonts/mazius/MAZIUSREVIEW2009-Italic.woff') format("woff");
+  src: url("./assets/Fonts/mazius/MAZIUSREVIEW2009-Italic.ttf")
+      format("truetype"),
+    url("./assets/Fonts/mazius/MAZIUSREVIEW2009-Italic.woff") format("woff");
 }

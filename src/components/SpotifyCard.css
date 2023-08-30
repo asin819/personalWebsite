@@ -1,21 +1,6 @@
 @import url('../index.css');
 
 
-.SpotifyContainer{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.SpotifyText{
-    width: 30vw;
-    color: var(--darkColor);
-    font-size: 4rem;
-    
-}
-
 .SpotifyPlayer{
     width: 35vw;
     height: 70vh;
@@ -25,24 +10,6 @@
 
 @media only screen and (max-width: 500px) {
     
-.SpotifyContainer{
-    
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.SpotifyText{
-    color: var(--darkColor);
-    font-size: 1.8rem;
-    width: 70vw;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
 .SpotifyPlayer{
     width: 70vw;
     margin-bottom: 50px;

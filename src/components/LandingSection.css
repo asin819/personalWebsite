@@ -1,47 +1,5 @@
 @import url('../index.css');
 
-#LandingSection{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: red;
-}
-
-#block1{
-    width: 100%;
-    height: 100%;
-    background-color: var(--darkColor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#block2{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background-color: var(--popAccent);
-}
-
-#block3{
-    width: 100%;
-    height: 0%;
-    /* height: 100%; */
-    position: absolute;
-    bottom: 0;
-    background-color: var(--lightColor);
-    color: #303030;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    flex-direction: column;
-}
-
-#block3ContentContainer{
-    transform: translate(0, 1000px);
-    display: none;
-}
-
 .block3Content{
     margin-left: calc(80vw/2);
     display: flex;

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Comic Sans MS';
+    src: url(../assets/Fonts/comici.ttf);
+}
+
+
+.MobileContainer {
+  background-image: url("../assets/spotSpidey.jpg");
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.MobileText {
+  width: fit-content;
+  position: absolute;
+  bottom: 50px;
+  left: calc((100vw - 300px)/2);
+  text-align: center;
+  background-color: yellow;
+  border: 2px solid black;
+  padding: 10px;
+  font-family: "Comic Sans MS";
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  width: 300px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.MobileText:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 100%;
+  height: 5px;
+  background-color: red;
+}
+
+.MobileText:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: red;
+}
+
+.MobileText p {
+  margin: 0;
+  line-height: 1.4;
+}

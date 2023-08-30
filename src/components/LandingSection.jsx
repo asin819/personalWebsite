@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from "react";
 import "./LandingSection.css";
 import { gsap } from "gsap";
 import { Expo } from "gsap";
+import styled from 'styled-components'
+import { useContext } from "react";
+import {ThemeContext} from '../contexts/theme'
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const LandingSection = () => {
   const block1ref = useRef(null);
@@ -12,6 +16,9 @@ const LandingSection = () => {
   const landingChildMiddleRef = useRef(null);
   const landingChildRightRef = useRef(null);
   const block3ContentContainerRef = useRef(null)
+
+  const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
+
 
   var counter = 0;
 
@@ -88,14 +95,54 @@ const LandingSection = () => {
   }, []);
 
   const getRandomText = () => {
-    const texts = ["Passionate 😤", "Creative", "Caffeine Addict ☕"]; // Add your desired texts here
+    const texts = ["Passionate 😤", "Creative 💅", "Caffeine Addict ☕"]; // Add your desired texts here
     counter = counter + 1;
     return texts[counter%3];
   };
 
+  const LandingSection = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  `
+
+  const Block1 = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: ${theme.background};
+  color: ${theme.font};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  `
+  const Block2 = styled.div`
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: ${theme.accent};
+  `
+
+  const Block3 = styled.div`
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  bottom: 0;
+  background-color: ${theme.background};
+  color: #303030;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  `
+
+  const Block3ContentContainer = styled.div`
+  transform: translate(0, 1000px);
+  display: none;
+  color: ${theme.font};
+  `
   return (
-    <div id="LandingSection">
-      <div id="block1" ref={block1ref}>
+    <LandingSection>
+      <Block1 ref={block1ref}>
         <h1 id="landingDiv">
           <span id="landingParent">
             <div id="landingChild" ref={landingChildRef}>
@@ -111,19 +158,21 @@ const LandingSection = () => {
             </div>
           </span>
         </h1>
-      </div>
-      <div id="block2" ref={block2ref} />
-      <div id="block3" ref={block3ref}>
-        <div id="block3ContentContainer" ref={block3ContentContainerRef}>
-          <div className="block3Content moveRight">IM A</div>
+      </Block1>
+      <Block2 ref={block2ref} />
+      <Block3 ref={block3ref}>
+        
+        <Block3ContentContainer ref={block3ContentContainerRef}>
+          <ThemeSwitcher/>
+          <div className="block3Content moveRight">I'M A</div>
           <div className="block3Content moveLeft changingText"></div>
           <div className="block3Content">FINAL YEAR</div>
           <div className="block3Content customColor customFont">SOFTWARE</div>
           <div className="block3Content moveLeft ">ENGINEERING</div>
           <div className="block3Content">STUDENT</div>
-        </div>
-      </div>
-    </div>
+        </Block3ContentContainer>
+      </Block3>
+      </LandingSection>
   );
 };
 

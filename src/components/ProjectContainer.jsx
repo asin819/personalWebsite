@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { BsDownload } from "react-icons/bs";
-import AashishCV_25May from "../assets/AashishCV_25May.pdf";
+import SwiperProjectCard from "./SwiperProjectCard";
 import styled from "styled-components";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/theme";
 import { CardData } from "../data/CardData";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import { useViewport } from "../hooks/useViewport";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCards } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-cards";
 
 const ProjectContainer = () => {
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "../assets/AashishCV_25May.pdf";
-    link.download = "AashishCV_25May.pdf";
-    link.click();
-  };
+  const { width } = useViewport();
+  const breakpoint = 500;
+  const [isGrid, setIsGrid] = useState(true);
 
   const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
 
@@ -41,68 +41,138 @@ const ProjectContainer = () => {
   `;
 
   const CardContainer = styled.div`
-  width: 100%;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  @media only screen and (min-width: 1400px) {
-    width: 80vw
-  }
-  `;
-
-  const CardChild = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 33.33%
-  `
-
-  const Resume = styled.div`
+    width: 100%;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: underline;
+    flex-wrap: wrap;
+
+    @media only screen and (min-width: 1400px) {
+      width: 80vw;
+    }
   `;
 
-  const ResumeText = styled.h4`
-    margin-right: 10px;
+  const CardChild = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 33.33%;
+  `;
+
+  const ButtonContainer = styled.div``;
+
+  const Button = styled.button`
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 10px;
+    width: 100px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    border-outline: none;
   `;
 
-  const SwitchContainer = styled.div`
-  width: 100%;
-  background-color: ${theme.backgroundSecondary};
-  display: flex;
-  justify-content: end;
-`;
-  return (
-    <Container>
-      {/* <SwitchContainer>
-        <ThemeSwitcher/>
-      </SwitchContainer> */}
-      <Header>
-        <CustomSpan>University </CustomSpan>Projects
-      </Header>
+  const HandleGridClick = () => {
+    setIsGrid(true);
+  };
+
+  const HandleSwiperClick = () => {
+    setIsGrid(false);
+  };
+  const RenderGrid = () => {
+    return (
       <CardContainer>
-        {CardData.map((item) => {
+        {CardData.map((item, index) => {
           return (
-            <CardChild>
-            <ProjectCard
-              name={item.name}
-              desc={item.description}
-              image={item.image}
-              tech={item.tech}
-            /></CardChild>
+            <CardChild key={index}>
+              <ProjectCard
+                name={item.name}
+                desc={item.description}
+                image={item.image}
+                tech={item.tech}
+                altText={item.altText}
+              />
+            </CardChild>
           );
         })}
       </CardContainer>
-      <Resume onClick={downloadResume}>
-        <ResumeText>Download my resume</ResumeText>
-        <BsDownload />
-      </Resume>
+    );
+  };
+
+  const RenderSwiper = () => {
+    return (
+      <Swiper
+        effect={"cards"}
+        grabCursor={true}
+        modules={[EffectCards]}
+        loop={true}
+        className="mySwiper"
+        style={{
+          width: "300px",
+          marginTop: "30px",
+          marginBottom: "30px",
+        }}
+      >
+        {CardData.map((item, index) => {
+          return (
+            <SwiperSlide key={index} style={{}}>
+              <SwiperProjectCard
+                name={item.name}
+                desc={item.description}
+                image={item.image}
+                tech={item.tech}
+                altText={item.altText}
+              />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    );
+  };
+  const RenderDesktop = () => {
+    return (
+      <>
+        <ButtonContainer>
+          <Button
+            style={{
+              backgroundColor: isGrid ? theme.accent : "transparent",
+              color: isGrid ? "#fefefe" : theme.accent,
+              borderColor: isGrid ? "none" : theme.accent,
+              border: isGrid ? "none" : "2px solid",
+            }}
+            onClick={HandleGridClick}
+          >
+            Grid
+          </Button>
+          <Button
+            style={{
+              backgroundColor: isGrid ? "transparent" : theme.accent,
+              color: isGrid ? theme.accent : "#fefefe",
+              borderColor: isGrid ? theme.accent : "none",
+              border: isGrid ? "2px solid" : "none",
+            }}
+            onClick={HandleSwiperClick}
+          >
+            Swiper
+          </Button>
+        </ButtonContainer>
+        {isGrid ? RenderGrid() : RenderSwiper()}
+      </>
+    );
+  };
+
+  const RenderMobile = () => {
+    return RenderSwiper();
+  };
+
+  return (
+    <Container>
+      <Header>
+        <CustomSpan>University </CustomSpan>Projects
+      </Header>
+      {width < breakpoint ? RenderMobile() : RenderDesktop()}
     </Container>
   );
 };

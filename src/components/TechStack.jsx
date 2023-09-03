@@ -67,9 +67,9 @@ const TechStack = () => {
         Technology <CustomSpan> Stack </CustomSpan>
       </Header>
       <TechContainer>
-        {TechStackData.map((item) => {
+        {TechStackData.map((item, index) => {
           return (
-            <ChildItem>
+            <ChildItem key={index}>
             <TechItem>
               <TechIcon>{item.icon}</TechIcon>
               {item.name}

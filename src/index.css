@@ -35,6 +35,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--lightColor);
   color: var(--lightColor);
+  overflow-x: hidden;
+
 }
 
 code {
@@ -47,4 +49,5 @@ code {
   src: url("./assets/Fonts/mazius/MAZIUSREVIEW2009-Italic.ttf")
       format("truetype"),
     url("./assets/Fonts/mazius/MAZIUSREVIEW2009-Italic.woff") format("woff");
+    font-display: swap;
 }

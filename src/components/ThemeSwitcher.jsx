@@ -4,8 +4,7 @@ import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 
 export const ThemeSwitcher = () => {
-
-    const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
+  const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
   const MaterialUISwitch = styled(Switch)(() => ({
     width: 62,
     height: 34,
@@ -24,8 +23,7 @@ export const ThemeSwitcher = () => {
         },
         "& + .MuiSwitch-track": {
           opacity: 1,
-          backgroundColor:
-            isDark ? "#8796A5" : "#aab4be",
+          backgroundColor: isDark ? "#8796A5" : "#aab4be",
         },
       },
     },
@@ -53,7 +51,18 @@ export const ThemeSwitcher = () => {
       borderRadius: 20 / 2,
     },
   }));
-  
 
-  return <MaterialUISwitch sx={{ m: 1 }} checked={isDark} onChange={toggleTheme} />;
+  return (
+    <>
+      <label htmlFor="theme-switcher" style={{ position: 'absolute', clip: 'rect(0 0 0 0)', width: 1, height: 1 }}>
+      Toggle Theme
+    </label>
+      <MaterialUISwitch
+        id="theme-switcher"
+        sx={{ m: 1 }}
+        checked={isDark}
+        onChange={toggleTheme}
+      />
+    </>
+  );
 };

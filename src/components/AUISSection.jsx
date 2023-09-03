@@ -101,6 +101,7 @@ const AUISSection = () => {
           url="https://www.instagram.com/p/Co1MI-ovJlk/"
           width={370}
           height={465}
+          title="Embedded Instagram Post"
         />
       </IGContainer>
     );

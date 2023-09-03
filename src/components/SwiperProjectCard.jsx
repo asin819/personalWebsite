@@ -7,16 +7,14 @@ const ProjectCard = (props) => {
   const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
 
   const Container = styled.div`
-    height: 450px;
+    height: auto;
     width: 300px;
     background-color: ${theme.background};
     color: ${theme.font};
-    margin: 20px;
-    margin-bottom: 60px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    
+    margin-right: 0px;
   `;
 
   const ImageContainer = styled.div`
@@ -32,15 +30,15 @@ const ProjectCard = (props) => {
   `;
 
   const ProjectName = styled.p`
-    margin-left: 20px;
+    padding-left: 20px;
     margin-bottom: 5px;
-    margin-top: 10px;
+    // padding-top: 10px;
     font-size: 1.5rem;
   `;
 
   const ProjectTech = styled.p`
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
     word-break: break-all;
     margin-bottom: 0px;
@@ -51,9 +49,9 @@ const ProjectCard = (props) => {
   `;
 
   const ProjectDescription = styled.p`
-    margin-top: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
+    // padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: justify;
   `;
   return (

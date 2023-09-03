@@ -56,7 +56,7 @@ const SpotifyCard = () => {
         <Text>Here's what I <CustomSpan>listen</CustomSpan> to 🎧</Text>
     <Spotify
       className="SpotifyPlayer"
-      link="https://open.spotify.com/playlist/41VAFy2alm71P5kyFckLdW?si=19179be7676e4505"
+      link="https://open.spotify.com/playlist/1ZDYFq7WOxyamDkvBthf0L?si=86d6059b502247fe"
     />
     
     </Container>

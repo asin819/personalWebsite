@@ -8,6 +8,7 @@ import { CardData } from "../data/CardData";
 import { useViewport } from "../hooks/useViewport";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
+import { MdSwipe } from "react-icons/md";
 import "swiper/css";
 import "swiper/css/effect-cards";
 
@@ -73,6 +74,9 @@ const ProjectContainer = () => {
     font-weight: bold;
     border-outline: none;
   `;
+  const Span = styled.span`
+  margin-bottom: 20px;
+`;
 
   const HandleGridClick = () => {
     setIsGrid(true);
@@ -103,6 +107,7 @@ const ProjectContainer = () => {
 
   const RenderSwiper = () => {
     return (
+      <>
       <Swiper
         effect={"cards"}
         grabCursor={true}
@@ -129,6 +134,10 @@ const ProjectContainer = () => {
           );
         })}
       </Swiper>
+      <Span>
+        Swipe <MdSwipe />
+      </Span>
+      </>
     );
   };
   const RenderDesktop = () => {

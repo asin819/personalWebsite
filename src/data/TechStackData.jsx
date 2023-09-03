@@ -17,6 +17,7 @@ import {
   } from "react-icons/si";
   import { TbSql } from "react-icons/tb";
   import { SiGnubash } from "react-icons/si";
+  import reactLogo from '../assets/react.svg'
 
 export const TechStackData = [
     {
@@ -37,7 +38,11 @@ export const TechStackData = [
     },
     {
         name: 'React',
-        icon: <FaReact/>
+        icon: <a href="https://react.dev" target="_blank">
+        <img src={reactLogo} className="logo react" alt="React logo" />
+      </a>
+
+
     },
     {
         name: 'Kotlin',
